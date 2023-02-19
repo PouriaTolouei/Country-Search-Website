@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Country Search</title>
+	<link href="project2.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="project2.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+	<div class="search">
+		<img src="images/globe.gif" id="logo">
+		<form id="main_search">
+			<h1>Country Search</h1>
+			<div class="input_box">
+				<i class="material-icons">search</i>
+				<input id="country_input" type="text" name="country_input" placeholder="Canada">
+			</div>
+		</form>
+		<div class="filters">
+			<form oninput="show_range()" id="range_input">
+				<h3>Area:</h3>
+				<input type="range" min="0" max="17098242" value="0" name="country_area">
+				<p id="range1">0 km^2 and above</p>
+				<h3>Population:</h3>
+				
+				<input type="range" min="0" max="1402112000" value="0" name="population">
+				<p id="range2">0 people and above</p>
+			</form>
+			<form id="region_input">
+				<h3>Region:</h3>
+				<input type="radio" name="region_choice" value="Africa" checked><p>Africa</p>
+				<input type="radio" name="region_choice" value="Americas"><p>Americas</p>
+				<input type="radio" name="region_choice" value="Asia"><p>Asia</p><br>
+				<input type="radio" name="region_choice" value="Europe"><p>Europe</p>
+				<input type="radio" name="region_choice" value="Oceania"><p>Oceania</p>
+			</form>
+		</div>
+		<div class="buttons">
+			<button onclick="show_result_by_name()"><p>Search by Name</p></button>
+			<button onclick="show_result_by_filter()"><p>Random Search by Filter</p></button>
+			<button onclick="reset()"><p>Reset</p></button>
+		</div>
+	</div>
+	<div id="result">
+		<img id="country_flag">
+		<div id="country_map">
+		</div>
+		<h1 id="country_title"></h1>
+		<table>
+			<tr>
+				<th>Official Name</th>
+				<td id="official_name"></td>
+			</tr>
+			<tr>
+				<th>Independence</th>
+				<td><img id="independence_status"></td>
+			</tr>
+			<tr>
+				<th>UN Membership</th>
+				<td><img id="un_status"></td>
+			</tr>
+			<tr>
+				<th>Region</th>
+				<td id="region"></td>
+			</tr>
+			<tr>
+				<th>Subregion</th>
+				<td id="sub_region"></td>
+			</tr>
+			<tr>
+				<th>Capital</th>
+				<td id="capital"></td>
+			</tr>
+			<tr>
+				<th>Languages</th>
+				<td id="languages"></td>
+			</tr>
+			<tr>
+				<th>Currencies</th>
+				<td id="currency"></td>
+			</tr>
+			<tr>
+				<th>Area</th>
+				<td id="area"></td>
+			</tr>
+			<tr>
+				<th>Populration</th>
+				<td id="population"></td>
+			</tr>
+		</table>
+		
+	</div>
+</body>
+
+
+</html>
